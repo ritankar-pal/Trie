@@ -5,10 +5,12 @@ class Node{
 
 	public Node[] links;
 	public boolean flag;
+	public int countPrefix = 0;
 
 	public Node() {
 		this.links = new Node[26];
 		this.flag = false;
+		this.countPrefix = 0;
 	}
 
 	public boolean containsKey(char ch) {
@@ -29,6 +31,14 @@ class Node{
 
 	public boolean isEnd() {
 		return flag;
+	}
+	
+	public void increasePrefix() {
+		countPrefix++;
+	}
+	
+	public int getPrefix() {
+		return countPrefix;
 	}
 
 }
